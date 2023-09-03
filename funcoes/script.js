@@ -20,7 +20,7 @@ console.log(somarNumeros(5, 9));
 
 // Factory Functions
 
-function criarCelular(marcaCelular,tamanhoTela,capacidadeBateria) {
+function criarCelular(marcaCelular, tamanhoTela, capacidadeBateria) {
   return {
     marcaCelular,
     tamanhoTela,
@@ -33,15 +33,23 @@ function criarCelular(marcaCelular,tamanhoTela,capacidadeBateria) {
 
 // Constructor Functions
 
-function Celular(marcaCelular, tamanhoTela, capacidadeBateria){
-    this.marcaCelular = marcaCelular,
-    this.tamanhoTela = tamanhoTela,
-    this.capacidadeBateria = capacidadeBateria,
-    this.ligar = function(){
-        console.log("Fazendo ligação...")
-    }
+function Celular(marcaCelular, tamanhoTela, capacidadeBateria) {
+  (this.marcaCelular = marcaCelular),
+    (this.tamanhoTela = tamanhoTela),
+    (this.capacidadeBateria = capacidadeBateria),
+    (this.ligar = function () {
+      console.log("Fazendo ligação...");
+    });
 }
 
-const celular = new Celular("Samsung", 6.7, 6000)
+const celular = new Celular("Samsung", 6.7, 6000);
 
-console.log(celular)
+console.log(celular);
+
+// Arrow Functions
+const pessoas = [
+  { nome: "Vil", idade: 12 },
+  { nome: "Pedro", idade: 65 },
+];
+
+console.log(pessoas.find((pessoa) => pessoa.nome === "Vil"));
