@@ -1,18 +1,15 @@
 const button = document.getElementById("btn");
 const res = document.querySelector("p#txtarea");
 button.addEventListener("click", verificarEntrada);
-const pessoasPermitidas = [
-  {
-    nomeAnfitriao: "Cristian",
-    nomeConvidadosCristian: ["Pedro", "Maria", "João"],
-  },
-  { nomeAnfitriao: "Paulo", nomeConvidadosPaulo: ["Vitor", "José"] },
-];
+const nomeConvidadosCristian = ["Pedro", "Maria", "João"];
 
 function verificarEntrada() {
-  const nomeConvidado = document.getElementById("nomeConvidado");
-  const nomeAnfitriao = document.getElementById("nomeAnfitriao");
-  console.log(nomeAnfitriao.nomeAnfitriao);
+  const nomeConvidado = document.getElementById("nomeConvidado").value;
+  const nomeAnfitriao = document.getElementById("nomeAnfitriao").value;
+  if(nomeAnfitriao === "Cristian" && nomeConvidadosCristian.includes(nomeConvidado)){
+    res.innerHTML = "Você pode entrar!"
+  }
+  else{
+    res.innerHTML = "Você não pode entrar!"
+  }
 }
-
-//includes
